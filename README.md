@@ -8,3 +8,6 @@
 - docker Docker version 20.10.12, build e91ed57
 - swagger 2.9.2
 
+### Responsividade
+
+
