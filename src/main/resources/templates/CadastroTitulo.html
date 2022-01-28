@@ -4,18 +4,39 @@
 <meta charset="UTF-8">
 <title>Cadastro de Títulos</title>
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-static-top" style="padding-bottom:15px">
+	<nav class="navbar navbar-inverse navbar-static-top">
 		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#"> 
-				<img alt="Brand" src="/images/logo.png">
+			<div class="navbar-header" style="padding-bottom: 10px">
+				<a class="navbar-brand" href="#"> <img alt="Brand"
+					src="/images/logo.png">
 				</a>
 			</div>
 		</div>
 	</nav>
+	<div class="container">
+		<form class="formr-horizontal">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h1 class="panel-title">Novo Título</h1>
+				</div>
+				<div class="panel-body">
+				  <div class="form-group">
+				  	<label for="descricao" class="col-sm-2 control-label">Descrição</label>
+				  	<div class="col-sm-4">
+				  		<input type="text" class="form-control" id="descricao" />
+				  	</div>
+				  </div>
+				
+				</div>
 
+			</div>
+		</form>
+
+	</div>
 
 	<script src="/js/bootstrap.min.js" /></script>
 </body>
