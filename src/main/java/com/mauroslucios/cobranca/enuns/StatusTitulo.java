@@ -1,4 +1,4 @@
-package com.mauroslucios.enuns;
+package com.mauroslucios.cobranca.enuns;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.mauroslucios.model;
+package com.mauroslucios.cobranca.model;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -12,24 +12,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 
-import com.mauroslucios.enuns.StatusTitulo;
+import com.mauroslucios.cobranca.enuns.StatusTitulo;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
-@Entity
-@Table(name="tb_titulo")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Table(name="tb_titulo")
+@Entity
 public class Titulo {
 
 	@EqualsAndHashCode.Include
@@ -37,19 +34,15 @@ public class Titulo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	
-	@NotBlank
-	@Size(max=255)
 	private String descricao;
 	
-	@NotBlank
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataVencimento;
 	
-	@NotBlank
+	@NumberFormat(pattern = "#,##0.00")
 	private BigDecimal valor;
 	
-	@NotBlank
 	@Enumerated(EnumType.STRING)
 	private StatusTitulo status;
 	

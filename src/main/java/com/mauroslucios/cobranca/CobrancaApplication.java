@@ -10,4 +10,5 @@ public class CobrancaApplication {
 		SpringApplication.run(CobrancaApplication.class, args);
 	}
 
+	
 }

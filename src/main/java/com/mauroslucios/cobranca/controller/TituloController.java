@@ -8,17 +8,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.mauroslucios.model.Titulo;
+import com.mauroslucios.cobranca.model.Titulo;
+import com.mauroslucios.cobranca.service.TituloService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
 
 @Controller
 @Api(value="APP de controle de cobranças")
 @CrossOrigin(origins = "*")
 @RequestMapping("/titulos")
+@AllArgsConstructor
 public class TituloController {
 
+	
+	private TituloService tituloService;
 	
 	@GetMapping("/buscar")
 	@ApiOperation(value="Busca um titulo no banco")
@@ -30,6 +35,7 @@ public class TituloController {
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping("/cadastrar")
 	public String salvar(Titulo titulo) {
+		tituloService.cadastrar(titulo);
 		return "CadastroTitulo";
 	}
 	
