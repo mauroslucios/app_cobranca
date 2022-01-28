@@ -7,3 +7,9 @@
 	width:32px;
 	height:32px;
 }
+form .btn-warning{
+	background-color: #FFA900;
+}
+form .btn-primary{
+	background-color: #1266F1;
+}
