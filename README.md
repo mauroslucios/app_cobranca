@@ -1,7 +1,7 @@
 # App_cobrança
 ### Gerenciamento de cobrança usando as seguintes tecnologias
 - Java openjdk 11.0.13 2021-10-19
-- thymeleaf
+- thymeleaf 3.0.14
 - ajax
 - bootstrap v5.1.3
 - mysql 8.0.27
