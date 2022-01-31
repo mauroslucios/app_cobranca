@@ -31,7 +31,7 @@ public class TituloController {
 	private TituloService tituloService;
 	
 	@GetMapping("/novo")
-	@ApiOperation(value="Busca um titulo no banco")
+	@ApiOperation(value="Adicona um titulo no banco")
 	public ModelAndView novo() {
 		ModelAndView mv = new ModelAndView("CadastroTitulo");
 		mv.addObject("todosStatusTitulo",StatusTitulo.values());
@@ -51,6 +51,12 @@ public class TituloController {
 	@ModelAttribute("todosStatusTitulo")
 	public List<StatusTitulo> todosStatusTitulo(){
 		return Arrays.asList(StatusTitulo.values());
+	}
+	
+	@GetMapping("/pesquisa")
+	@ApiOperation(value="Busca um titulo no banco")
+	public String pesquisa() {
+		return "PesquisaTitulos";
 	}
 	
 }
