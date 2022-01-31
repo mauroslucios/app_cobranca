@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="UTF-8"/>
+<title>Cobrança</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/all.css" />
+
+</head>
+<body>
+	<header th:replace="cabecalho"></header>
+	<section class="container" layout:fragment="conteudo"></section>
+	<!-- jQuery library -->
+	<script src="/js/jquery-2.1.4.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="/js/bootstrap.min.js" /></script>
+	<!-- Initialize Bootstrap functionality -->
+	<script src="/js/all.js" /></script>
+	<script>
+		// Initialize tooltip component
+		$(function () {
+		  $('[data-toggle="tooltip"]').tooltip()
+		})
+		
+		// Initialize popover component
+		$(function () {
+		  $('[data-toggle="popover"]').popover()
+		})
+		setTimeout(function () {
+            // Closing the alert
+            $('.alert').alert('close');
+        }, 5000);
+        $(document).ready(function(){
+            $('#btnDelete').click(function () {                                
+                document.getElementById('formDelete').submit();
+            })
+        });  
+	</script>
+</body>
+</html>
