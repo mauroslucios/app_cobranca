@@ -48,15 +48,20 @@ public class TituloController {
 		return mv;
 	}
 	
+	@GetMapping("/pesquisa")
+	@ApiOperation(value="Busca um titulo no banco")
+	public ModelAndView pesquisa() {
+		List<Titulo> todosTitulos = tituloService.pesquisar();
+		ModelAndView mv = new ModelAndView("PesquisaTitulos");
+		mv.addObject("titulos", todosTitulos);
+		return mv;
+	}
+	
+		
 	@ModelAttribute("todosStatusTitulo")
 	public List<StatusTitulo> todosStatusTitulo(){
 		return Arrays.asList(StatusTitulo.values());
 	}
 	
-	@GetMapping("/pesquisa")
-	@ApiOperation(value="Busca um titulo no banco")
-	public String pesquisa() {
-		return "PesquisaTitulos";
-	}
-	
+		
 }

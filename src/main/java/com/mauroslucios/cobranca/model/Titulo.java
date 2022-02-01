@@ -21,9 +21,11 @@ import com.mauroslucios.cobranca.enuns.StatusTitulo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name="tb_titulo")
 @Entity

@@ -29,14 +29,28 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td colspan="5">Nenhum título encontrado</td>
+					<tr th:each="titulo : ${titulos}">
+						<td class="text-center col-md-1" th:text="${titulo.codigo}"></td>
+						<td th:text="${titulo.descricao}"></td>
+						<td class="text-center col-md-2" th:text="${titulo.dataVencimento}"></td>
+						<td class="text-right col-md-2" th:text="${titulo.valor}"></td>
+						<td class="text-center col-md-2" th:text="${titulo.status}"></td>
 						<td class="text-center col-md-2"><i class="fas fa-trash-alt"
 							style="color: #F93154"></i> <i class="far fa-edit"
 							style="color: #00B74A"></i> <i class="fas fa-search"
 							style="color: #39C0ED"></i></td>
 					</tr>
 				</tbody>
+				<tfoot>
+					<tr>
+						<th scope="col" class="text-center col-md-1">#</th>
+						<th scope="col">descrição</th>
+						<th scope="col" class="text-center col-md-2">data vencimento</th>
+						<th scope="col" class="text-right col-md-2">valor</th>
+						<th scope="col" class="text-center col-md-2">status</th>
+						<th scope="col" class="text-center col-md-2">Ações</th>
+					</tr>
+				</tfoot>
 			</table>
 		</div>
 	</div>

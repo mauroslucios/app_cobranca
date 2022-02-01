@@ -1,5 +1,7 @@
 package com.mauroslucios.cobranca.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.mauroslucios.cobranca.model.Titulo;
@@ -16,6 +18,16 @@ public class TituloService {
 
 	public void cadastrar(Titulo titulo) {
 		tituloRepository.save(titulo);		
+	}
+
+	public void pesquisar(Titulo titulo) {
+		tituloRepository.findAll();
+	}
+
+	
+	public List<Titulo> pesquisar() {
+		List<Titulo> titulos = tituloRepository.findAll();
+		return titulos;
 	}
 
 	
