@@ -1,15 +1,34 @@
 @charset "UTF-8";
 
-.navbar-brand{
-	 padding-bottom:15px"
+.navbar-brand {
+	padding-bottom: 15px"
 }
-.navbar-brand img{
-	width:32px;
-	height:32px;
+
+.navbar-brand img {
+	width: 32px;
+	height: 32px;
 }
-form .btn-warning{
+
+form .btn-warning {
 	background-color: #FFA900;
 }
-form .btn-primary{
+
+form .btn-primary {
 	background-color: #1266F1;
 }
+
+.aw-link-panel {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	list-style-type:none;
+	padding:0px;
+	
+}
+
+ul li a{
+	text-decoration: none;
+}
+
+

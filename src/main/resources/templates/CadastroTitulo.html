@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    layout:decorate="~{LayoutPadrao}">
+	layout:decorate="~{LayoutPadrao}">
 <head>
 
 <title>Cadastro de Títulos</title>
@@ -19,8 +19,14 @@
 			<span th:text="${mensagem}"></span>
 		</div>
 		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h1 class="panel-title">Novo Título</h1>
+			<div class="panel-heading clear-fix">
+				<ul class="aw-link-panel d-flex align-items-center">
+					<li style="padding: 5px"><h1 class="panel-title">Novo
+							Título</h1></li>
+					<li><a class="btn btn-link aw-link-panel"
+						href="/titulos/pesquisa" style="text-decoration: none">Voltar
+							para pesquisa</a></li>
+				</ul>
 			</div>
 			<div class="panel-body">
 				<div class="form-group">
