@@ -32,7 +32,7 @@
 					<tr th:each="titulo : ${titulos}">
 						<td class="text-center col-md-1" th:text="${titulo.codigo}"></td>
 						<td th:text="${titulo.descricao}"></td>
-						<td class="text-center col-md-2" th:text="${titulo.dataVencimento}"></td>
+						<td class="text-center col-md-2" th:text="${{titulo.dataVencimento}}"></td>
 						<td class="text-right col-md-2" th:text="${titulo.valor}"></td>
 						<td class="text-center col-md-2" th:text="${titulo.status.descricao}"></td>
 						<td class="text-center col-md-2"><i class="fas fa-trash-alt"
