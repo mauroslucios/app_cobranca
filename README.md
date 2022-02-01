@@ -10,5 +10,13 @@
 - Devtools
 
 ### Responsividade
+- template thymeleaf
+- mobile first
+- 
+
+### Mysql e H2
+- application.properties
+- mysql spring-profile -> dev
+- H2 spring-profile -> test
 
 
