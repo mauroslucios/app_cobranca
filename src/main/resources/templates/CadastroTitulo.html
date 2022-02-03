@@ -9,15 +9,9 @@
 
 </head>
 <div layout:fragment="conteudo">
-	<form class="form-horizontal" method="POST" action="/titulos/cadastrar">
-		<div class="alert alert-success alert-dismissible fade in"
-			role="alert" th:if="${!#strings.isEmpty(mensagem)}">
-			<button type="button" class="close" data-dismiss="alert"
-				aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-			<span th:text="${mensagem}"></span>
-		</div>
+	<form class="form-horizontal" method="POST" action="/titulos/cadastrar"
+		th:object="${titulo}">
+		<div th:replace="Mensagem"></div>
 		<div class="panel panel-default">
 			<div class="panel-heading clear-fix">
 				<ul class="aw-link-panel d-flex align-items-center">
@@ -29,14 +23,16 @@
 				</ul>
 			</div>
 			<div class="panel-body">
-				<div class="form-group">
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('descricao')} ? has-error">
 					<label for="descricao" class="col-sm-2 control-label">Descrição</label>
 					<div class="col-sm-4">
 						<input type="text" class="form-control" id="descricao"
 							name="descricao" />
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('dataVencimento')} ? has-error">
 					<label for="descricao" class="col-sm-2 control-label">Data
 						de vencimento</label>
 					<div class="col-sm-2">
@@ -44,13 +40,15 @@
 							name="dataVencimento" />
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('valor')} ? has-error">
 					<label for="descricao" class="col-sm-2 control-label">Valor</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" id="valor" name="valor" />
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group"
+					th:classappend="${#fields.hasErrors('status')} ? has-error">
 					<label for="descricao" class="col-sm-2 control-label">Status</label>
 					<div class="col-sm-3">
 						<select class="form-select form-control"

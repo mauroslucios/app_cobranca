@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -34,16 +36,19 @@ public class TituloController {
 	@ApiOperation(value="Adicona um titulo no banco")
 	public ModelAndView novo() {
 		ModelAndView mv = new ModelAndView("CadastroTitulo");
-		mv.addObject("todosStatusTitulo",StatusTitulo.values());
+		mv.addObject(new Titulo());
 		return mv;
 	}
 	
 	@ApiOperation(value="Salva um título no banco")
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping("/cadastrar")
-	public ModelAndView salvar(Titulo titulo) {
-		tituloService.cadastrar(titulo);
+	public ModelAndView salvar(@Validated Titulo titulo, Errors errors) {
 		ModelAndView mv = new ModelAndView("CadastroTitulo");
+		if(errors.hasErrors()) {
+			return mv;
+		}
+		tituloService.cadastrar(titulo);
 		mv.addObject("mensagem","Título salvo com sucesso!");
 		return mv;
 	}
