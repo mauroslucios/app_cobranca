@@ -23,14 +23,14 @@
 				</ul>
 			</div>
 			<div class="panel-body">
-			<input type="hidden" th:field="*{codigo}"/>
-			
+				<input type="hidden" th:field="*{codigo}" />
+
 				<div class="form-group"
 					th:classappend="${#fields.hasErrors('descricao')} ? has-error">
 					<label for="descricao" class="col-sm-2 control-label">Descrição</label>
 					<div class="col-sm-4">
 						<input type="text" class="form-control" id="descricao"
-							th:field="*{descricao}"/>
+							th:field="*{descricao}" />
 					</div>
 				</div>
 				<div class="form-group"
@@ -46,7 +46,8 @@
 					th:classappend="${#fields.hasErrors('valor')} ? has-error">
 					<label for="descricao" class="col-sm-2 control-label">Valor</label>
 					<div class="col-sm-2">
-						<input type="text" class="form-control" id="valor" th:field="*{valor}" />
+						<input type="text" class="form-control" id="valor"
+							th:field="*{valor}" />
 					</div>
 				</div>
 				<div class="form-group"
@@ -54,7 +55,8 @@
 					<label for="descricao" class="col-sm-2 control-label">Status</label>
 					<div class="col-sm-3">
 						<select class="form-select form-control"
-							aria-label="Default select example" id="status" th:field="*{status}">
+							aria-label="Default select example" id="status"
+							th:field="*{status}">
 							<option th:each="status : ${todosStatusTitulo}"
 								th:value="${status}" th:text="${status.descricao}"></option>
 						</select>
@@ -63,7 +65,9 @@
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<button type="submit" class="btn btn-primary">Salvar</button>
-						<button type="reset" class="btn btn-warning">Cancelar</button>
+						<a href="/titulos/pesquisa">
+							<button type="button" class="btn btn-warning">Cancelar</button>
+						</a>
 					</div>
 				</div>
 			</div>

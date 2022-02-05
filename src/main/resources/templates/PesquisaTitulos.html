@@ -40,7 +40,7 @@
 							th:classappend="${titulo.pendente ? 'label-danger' : 'label-success'}"></span>
 						</td>
 						<td class="text-center col-md-2"><a
-							class="btn btn-link btn-xs"><i class="fas fa-trash-alt"
+							class="btn btn-link btn-xs" data-toggle="modal" data-target="#myModal"><i class="fas fa-trash-alt"
 								style="color: #F93154"></i></a> <a class="btn btn-link btn-xs"
 							th:href="@{/titulos/editar/{codigo}(codigo=${titulo.codigo})}"><i
 								class="glyphicon glyphicon-pencil" style="color: #FFA900"></i></a> <a
@@ -66,5 +66,6 @@
 			</table>
 		</div>
 	</div>
+	<div th:replace="modal"></div>
 </section>
 </html>
