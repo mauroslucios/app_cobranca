@@ -34,5 +34,8 @@ public class TituloService {
 		return tituloRepository.findById(codigo).get();
 	}
 
+	public void deletar(Long codigo) {
+		tituloRepository.deleteById(codigo);
+	}
 	
 }
