@@ -30,5 +30,9 @@ public class TituloService {
 		return titulos;
 	}
 
+	public Titulo findById(Long codigo) {
+		return tituloRepository.findById(codigo).get();
+	}
+
 	
 }
