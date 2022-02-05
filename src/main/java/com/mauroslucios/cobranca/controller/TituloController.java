@@ -40,15 +40,13 @@ public class TituloController {
 	
 	@ApiOperation(value="Salva um título no banco")
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView salvar(@Validated Titulo titulo, Errors errors, RedirectAttributes attributes) {
-		ModelAndView mv = new ModelAndView("CadastroTitulo");
+	public String salvar(@Validated Titulo titulo, Errors errors, RedirectAttributes attributes) {
 		if(errors.hasErrors()) {
-			return mv;
+			return "CadastroTitulo";
 		}
 		tituloService.cadastrar(titulo);
-		ModelAndView mv2 = new ModelAndView("redirect:/titulos/novo");
 		attributes.addFlashAttribute("mensagem","Título salvo com sucesso!");
-		return mv2;
+		return "redirect:/titulos/novo";
 	}
 	
 	@RequestMapping("/pesquisa")
