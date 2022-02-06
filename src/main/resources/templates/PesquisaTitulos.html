@@ -7,6 +7,7 @@
 <title>Pesquisa de Títulos</title>
 </head>
 <section layout:fragment="conteudo">
+	<div th:replace="MensagemGeral"></div>
 	<div class="panel panel-default">
 		<div class="panel-heading clear-fix">
 			<ul class="aw-link-panel d-flex align-items-center">
@@ -39,20 +40,17 @@
 							th:text="${titulo.status.descricao}"
 							th:classappend="${titulo.pendente ? 'label-danger' : 'label-success'}"></span>
 						</td>
-						<td class="text-center col-md-2">
-							<a class="btn btn-link btn-xs"> 
-								<i class="fas fa-search" style="color: #00B74A"></i>
-							</a>
-							
-							<a class="btn btn-link btn-xs" th:href="@{/titulos/editar/{codigo}(codigo=${titulo.codigo})}">
+						<td class="text-center col-md-2"><a
+							class="btn btn-link btn-xs"> <i class="fas fa-search"
+								style="color: #00B74A"></i>
+						</a> <a class="btn btn-link btn-xs"
+							th:href="@{/titulos/editar/{codigo}(codigo=${titulo.codigo})}">
 								<i class="glyphicon glyphicon-pencil" style="color: #FFA900"></i>
-							</a>
-							
-							<a class="btn btn-link btn-xs" data-toggle="modal" data-target="#myModal"
-								th:attr="data-codigo=${titulo.codigo}">
+						</a> <a class="btn btn-link btn-xs" data-toggle="modal"
+							data-target="#myModal"
+							th:attr="data-codigo=${titulo.codigo},data-descricao=${titulo.descricao}">
 								<i class="fas fa-trash-alt" style="color: #F93154"></i>
-							</a> 
-						</td>
+						</a></td>
 					</tr>
 					<tr>
 						<td colspan="6" th:if="${#lists.isEmpty(titulos)}"
