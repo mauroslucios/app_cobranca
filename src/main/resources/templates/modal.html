@@ -8,7 +8,7 @@
 	aria-labelledby="myModalLabel" data-keyboard="false"
 	data-backdrop="static">
 	<div class="modal-dialog" role="document">
-		<form action="/titulos/excluir" method="POST" th:method="DELETE">
+		<form th:attr="data-url-base='/titulos/excluir'" method="POST" th:method="DELETE">
 			<!--<input type="hidden" name="_method" value="DELETE" />-->
 			<div class="modal-content">
 				<div class="modal-header">
